@@ -11,7 +11,6 @@ class CreateUserService {
     
     async execute({name,email,admin}:IUserRequest){
         const userRepository = getCustomRepository(UsersRepositories);
-
         
         if (!email) {
             throw new Error("Email incorrect");
