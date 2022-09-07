@@ -1,3 +1,4 @@
+import { Expose } from "class-transformer";
 import {
     Entity,
     PrimaryColumn,
@@ -18,6 +19,11 @@ class Tag {
 
     @CreateDateColumn()
     created_at:Date;
+
+    @Expose({name:"name_custom"})
+    nameCustom():string{
+        return `#${this.name}`
+    }
 
     @UpdateDateColumn()
     updated_at:Date;
